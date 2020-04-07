@@ -13,7 +13,7 @@ struct CarManufacturerPage: View {
     var car : Car
     
     var body: some View {
-        Text(car.carManufacturer)
+        Text(car.manufacturer)
     }
 }
 

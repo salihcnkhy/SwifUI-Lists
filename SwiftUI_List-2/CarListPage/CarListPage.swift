@@ -10,14 +10,7 @@ import SwiftUI
 
 struct CarListPage: View {
     
-    @State var carList : [Car] = [
-               Car(carManufacturer: "Honda", carOrigin: .Asian),
-               Car(carManufacturer: "Suzuki", carOrigin: .Asian),
-               Car(carManufacturer: "Honda", carOrigin: .Asian),
-               Car(carManufacturer: "BMW", carOrigin: .European),
-               Car(carManufacturer: "Audi", carOrigin: .European),
-               Car(carManufacturer: "Ford", carOrigin: .American)
-        ]
+    @State var carList : [Car] = FetchCar().cars
 
     var body: some View {
  
@@ -42,7 +35,7 @@ struct CarListPage: View {
     
     func carFilter(type : CarOrigins) -> [Car]{
         return carList.filter{ (car) -> Bool in
-            car.carOrigin == type
+            car.origin == type
         }
     }
     
